@@ -1,0 +1,66 @@
+{
+  "mock": true,
+  "warning": "합성·연습용 이력서 OCR 검토 자료이며 실제 사람이나 제출 문서와 관계없습니다.",
+  "schemaVersion": "harmony.worker-resume-ocr-review.v1",
+  "documentType": "worker-resume",
+  "source": "synthetic-ocr",
+  "reviewStatus": "pending-human-review",
+  "capturedOn": "2026-07-27",
+  "observedFieldTypes": [
+    "photo",
+    "name",
+    "resident-number",
+    "phone",
+    "address",
+    "education",
+    "work-history",
+    "qualification",
+    "award",
+    "signature"
+  ],
+  "extracted": {
+    "caseId": "MOCK-RESUME-001",
+    "displayAlias": "합성 구직자 A (가명)",
+    "contactMask": "010-****-0001",
+    "desiredRoles": [
+      "경비",
+      "시설 보조"
+    ],
+    "experienceSummary": "합성 공동주택 경비와 시설 보조 업무 경험",
+    "workHistory": [
+      {
+        "organizationAlias": "합성 사업장 A",
+        "periodLabel": "2019~2021",
+        "dutySummary": "시설 순찰과 방문 안내"
+      },
+      {
+        "organizationAlias": "합성 사업장 B",
+        "periodLabel": "2022~2025",
+        "dutySummary": "공동주택 경비 업무"
+      }
+    ],
+    "qualifications": [
+      {
+        "title": "합성 경비 교육 이수",
+        "acquiredOn": "2025-12-01",
+        "issuerAlias": "합성 교육기관"
+      }
+    ],
+    "educationSummary": "합성 고등학교 과정 졸업",
+    "awardSummary": "합성 지역 활동 표창 이력 · 업무 관련성 사람 검토 필요",
+    "reviewNotes": "OCR 후보값은 원본 대조 후 필요한 최소정보만 근로자 접수표에 다시 입력"
+  },
+  "detections": [
+    "face-photo",
+    "full-name-or-signature",
+    "resident-registration-number",
+    "phone-number",
+    "full-address"
+  ],
+  "policy": {
+    "rawTextPersisted": false,
+    "imagePersisted": false,
+    "directIntakeCreation": false,
+    "humanReviewRequired": true
+  }
+}

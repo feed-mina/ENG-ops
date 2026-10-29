@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harmony-job-center.invalid/schemas/harmony.sdui.document.v1.schema.json",
+  "title": "Harmony SDUI Document v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "documentId",
+    "revision",
+    "pageId",
+    "locale",
+    "surface",
+    "minRendererVersion",
+    "themeRef",
+    "requiredCapabilities",
+    "root"
+  ],
+  "properties": {
+    "schema": { "const": "harmony.sdui.document.v1" },
+    "documentId": { "$ref": "#/$defs/id" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "pageId": { "$ref": "#/$defs/id" },
+    "locale": { "const": "ko" },
+    "surface": { "enum": ["web", "mobile"] },
+    "minRendererVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[a-zA-Z0-9.-]+)?$"
+    },
+    "themeRef": { "$ref": "#/$defs/id" },
+    "requiredCapabilities": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9]+@[0-9]+$"
+      }
+    },
+    "root": { "$ref": "#/$defs/node" }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+    },
+    "messageKey": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)+$"
+    },
+    "formatterId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[a-z][A-Za-z0-9]*(?:[._-][A-Za-z0-9]+)*$"
+    },
+    "jsonValue": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "boolean" },
+        { "type": "number" },
+        { "type": "string", "maxLength": 2000 },
+        {
+          "type": "array",
+          "maxItems": 100,
+          "items": { "$ref": "#/$defs/jsonValue" }
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "not": {
+              "pattern": "^(?:__proto__|prototype|constructor|html|innerhtml|dangerouslysetinnerhtml|script|scripts|javascript|css|sql|query|url|href|src|endpoint|method|headers|fetch|onclick|on[a-z]+)$"
+            }
+          },
+          "additionalProperties": { "$ref": "#/$defs/jsonValue" }
+        }
+      ]
+    },
+    "dataBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resourceId", "pointer"],
+      "properties": {
+        "resourceId": { "$ref": "#/$defs/id" },
+        "pointer": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^(?:|/(?:[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*))$"
+        },
+        "formatter": { "$ref": "#/$defs/formatterId" }
+      }
+    },
+    "actionRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actionId", "idempotency"],
+      "properties": {
+        "actionId": { "$ref": "#/$defs/id" },
+        "inputRef": { "$ref": "#/$defs/id" },
+        "confirmationKey": { "$ref": "#/$defs/messageKey" },
+        "idempotency": { "enum": ["none", "required"] }
+      }
+    },
+    "visibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "resourceId", "pointer"],
+      "properties": {
+        "kind": { "enum": ["data-present", "equals", "not-equals"] },
+        "resourceId": { "$ref": "#/$defs/id" },
+        "pointer": {
+          "type": "string",
+          "maxLength": 200,
+          "pattern": "^(?:|/(?:[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*))$"
+        },
+        "value": { "$ref": "#/$defs/jsonValue" }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "labelKey": { "$ref": "#/$defs/messageKey" },
+        "descriptionKey": { "$ref": "#/$defs/messageKey" },
+        "role": { "enum": ["none", "region", "navigation", "status", "alert"] },
+        "live": { "enum": ["off", "polite", "assertive"] }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "props"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "props": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/jsonValue" }
+        },
+        "children": {
+          "type": "array",
+          "maxItems": 100,
+          "items": { "$ref": "#/$defs/node" }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "gap": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "padding": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "paddingX": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "paddingY": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "marginTop": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "width": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "maxWidth": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "minHeight": { "type": "string", "pattern": "^space\\.[a-z0-9.-]+$" },
+            "background": { "type": "string", "pattern": "^color\\.[a-z0-9.-]+$" },
+            "borderRadius": { "type": "string", "pattern": "^radius\\.[a-z0-9.-]+$" },
+            "color": { "type": "string", "pattern": "^color\\.[a-z0-9.-]+$" }
+          }
+        },
+        "roles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["owner", "staff", "system_admin"] }
+        },
+        "visibility": { "$ref": "#/$defs/visibility" },
+        "dataBinding": { "$ref": "#/$defs/dataBinding" },
+        "actions": {
+          "type": "object",
+          "propertyNames": { "enum": ["press", "submit", "change"] },
+          "additionalProperties": { "$ref": "#/$defs/actionRef" }
+        },
+        "accessibility": { "$ref": "#/$defs/accessibility" },
+        "extensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "web": { "$ref": "#/$defs/jsonValue" },
+            "mobile": { "$ref": "#/$defs/jsonValue" }
+          }
+        }
+      }
+    }
+  }
+}

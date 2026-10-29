@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+  <title id="title">하모니직업소개소 로고</title>
+  <desc id="desc">연결을 뜻하는 H 심볼과 하모니직업소개소 한글 이름으로 구성된 가로형 로고</desc>
+  <g transform="translate(8 8) scale(1.62)">
+    <path fill="#B84C78" d="M32 3C48 3 61 16 61 32v13c0 8.8-7.2 16-16 16H19C10.2 61 3 53.8 3 45V32C3 16 16 3 32 3Z"/>
+    <path fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-width="8" d="M19 18v28M45 18v28M21 32h22"/>
+    <circle cx="49" cy="15" r="5" fill="#2E7FBD" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+  <text x="128" y="57" fill="#24324A" font-family="Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif" font-size="39" font-weight="800" letter-spacing="-2">하모니</text>
+  <text x="252" y="57" fill="#B84C78" font-family="Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif" font-size="29" font-weight="800" letter-spacing="-1.2">직업소개소</text>
+  <text x="130" y="88" fill="#2E7FBD" font-family="Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="700" letter-spacing="2.5">식당 인력소개 · 사당동</text>
+</svg>

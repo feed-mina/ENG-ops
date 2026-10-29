@@ -1,0 +1,83 @@
+:where(.sdui-root) {
+  box-sizing: border-box;
+  color: #1c2b45;
+  font: inherit;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+:where(.sdui-root *, .sdui-root *::before, .sdui-root *::after) {
+  box-sizing: inherit;
+}
+
+.sdui-page,
+.sdui-section,
+.sdui-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.sdui-grid {
+  display: grid;
+  gap: var(--sdui-grid-gap, 1rem);
+  grid-template-columns: repeat(var(--sdui-grid-columns, 1), minmax(0, 1fr));
+  min-width: 0;
+}
+
+.sdui-card,
+.sdui-notice,
+.sdui-state,
+.sdui-unsupported {
+  border: 1px solid #eadde3;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.sdui-stat,
+.sdui-stat dd {
+  margin: 0;
+}
+
+.sdui-stat-label,
+.sdui-tone-muted {
+  color: #667085;
+}
+
+.sdui-stat-value {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+}
+
+.sdui-notice-title,
+.sdui-state-title {
+  font-size: 1.125rem;
+  margin-block: 0 0.5rem;
+}
+
+.sdui-notice-message,
+.sdui-state-message,
+.sdui-unsupported-message {
+  margin: 0;
+}
+
+.sdui-tone-important {
+  background: #fff8fb;
+  border-color: #b84878;
+}
+
+.sdui-root :focus-visible {
+  outline: 3px solid #1c2b45;
+  outline-offset: 3px;
+}
+
+@media (max-width: 360px) {
+  .sdui-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sdui-page,
+  .sdui-section,
+  .sdui-card {
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "feedmina.sdui.template.v1",
+  "id": "harmony-ops",
+  "name": "하모니직업소개소 내부 업무",
+  "version": "0.2.0",
+  "recommendedTier": "free",
+  "runtimeAdapters": ["cloudflare-worker-static"],
+  "defaultLocale": "ko",
+  "locales": ["ko"],
+  "messages": {
+    "ko": {
+      "pages.dashboard.title": "업무 현황",
+      "pages.compliance.title": "준법 일정"
+    }
+  },
+  "pages": [
+    {
+      "id": "dashboard",
+      "sourceKind": "page_key",
+      "title": "업무 현황",
+      "route": "/admin/",
+      "metadataRef": "pages/dashboard.mock.document.json"
+    },
+    {
+      "id": "compliance",
+      "sourceKind": "page_key",
+      "title": "준법 일정",
+      "route": "/admin/compliance",
+      "metadataRef": "pages/compliance.mock.document.json"
+    }
+  ],
+  "metadata": {
+    "harmonyDocumentSchema": "harmony.sdui.document.v1",
+    "themeRef": "theme/tokens.json",
+    "messagesRef": "messages/ko.json"
+  },
+  "components": [
+    "Page",
+    "Section",
+    "Grid",
+    "Card",
+    "Heading",
+    "Text",
+    "Stat",
+    "Notice"
+  ],
+  "api": {
+    "endpoints": ["ui.pages.get", "ui.data.get", "ui.actions.post"]
+  },
+  "env": {
+    "vars": ["DATA_MODE", "INTAKE_ENABLED", "SDUI_ENABLED", "SDUI_REVISION"],
+    "secrets": [],
+    "bindings": ["DB"]
+  },
+  "gating": {
+    "free": ["mock-dashboard", "mock-compliance", "manual-preview"]
+  },
+  "risks": [
+    "Mock fixture only",
+    "Worker UI API remains feature-flagged off until Access and D1 operations approval"
+  ]
+}

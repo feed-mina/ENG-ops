@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "eng-ops",
+  "main": "apps/construction/worker.js",
+  "compatibility_date": "2026-07-17",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./dist/eng",
+    "binding": "ENG_ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "build": { "command": "npm run build:eng" }
+}

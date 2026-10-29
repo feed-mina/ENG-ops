@@ -1,0 +1,23 @@
+{
+  "schema": "harmony.sdui.messages.v1",
+  "locale": "ko",
+  "messages": {
+    "dashboard.title": "업무 현황",
+    "dashboard.description": "오늘 확인할 소개소 업무를 한눈에 봅니다.",
+    "dashboard.summary.title": "오늘의 업무",
+    "dashboard.pending-requests": "확인할 접수",
+    "dashboard.today-placements": "오늘 소개",
+    "dashboard.upcoming-compliance": "다가오는 준법 일정",
+    "dashboard.mock.title": "현재는 연습용 자료입니다",
+    "dashboard.mock.message": "실제 근로자나 식당 정보는 저장하지 않습니다.",
+    "compliance.title": "준법 일정",
+    "compliance.description": "등록·보험·교육·점검 일정을 한곳에서 확인합니다.",
+    "compliance.summary.title": "확인할 일정",
+    "compliance.overdue": "기한 초과",
+    "compliance.due-within-30-days": "30일 이내 도래",
+    "compliance.evidence-missing": "증빙 미등록",
+    "compliance.next-due-date": "다음 기한",
+    "compliance.mock.title": "현재는 연습용 일정입니다",
+    "compliance.mock.message": "실제 기한은 등록증·보험증권·교육 수료증 확인 후 입력합니다."
+  }
+}

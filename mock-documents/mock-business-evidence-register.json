@@ -1,0 +1,78 @@
+{
+  "mock": true,
+  "warning": "합성·연습용 증빙대장이며 실제 등록·공제·법령 확인 결과로 사용할 수 없습니다.",
+  "schemaVersion": "harmony.business-evidence-register.v1",
+  "evidence": [
+    {
+      "id": "MOCK-EVIDENCE-BUSINESS-001",
+      "documentType": "business-registration",
+      "verificationStatus": "pending-original-review",
+      "issuedOn": "2025-01-15",
+      "expiresOn": null,
+      "verifiedBy": "mock-reviewer",
+      "sourceRecord": "합성 사업자등록증 구조 표본",
+      "notes": "상호·업태·종목·개업일 후보만 사람 검토"
+    },
+    {
+      "id": "MOCK-EVIDENCE-AGENCY-001",
+      "documentType": "employment-agency-registration",
+      "verificationStatus": "pending-original-review",
+      "issuedOn": "2025-02-01",
+      "expiresOn": null,
+      "verifiedBy": "mock-reviewer",
+      "sourceRecord": "합성 직업소개사업 등록증 구조 표본",
+      "notes": "등록번호·대표자·생년월일·주소는 저장하지 않음"
+    },
+    {
+      "id": "MOCK-EVIDENCE-MUTUAL-AID-001",
+      "documentType": "mutual-aid-certificate",
+      "verificationStatus": "pending-original-review",
+      "issuedOn": "2026-01-01",
+      "expiresOn": "2026-12-31",
+      "verifiedBy": "mock-reviewer",
+      "sourceRecord": "합성 공제증서 구조 표본",
+      "notes": "공제번호·계약자·주소를 제외하고 만료일만 준법 일정 후보로 검토"
+    }
+  ],
+  "references": [
+    {
+      "id": "MOCK-REFERENCE-WAGE-001",
+      "referenceType": "minimum-wage-guide",
+      "reviewStatus": "unverified-reference",
+      "sourceLabel": "첨부 최저임금 안내표의 문서 유형",
+      "officialIdentifier": "",
+      "effectiveOn": null,
+      "checkedOn": "2026-07-27",
+      "summaryPrinciples": [],
+      "notes": "공식 출처와 시행일을 대조하기 전까지 계산 규칙에 사용하지 않음"
+    },
+    {
+      "id": "MOCK-REFERENCE-FEE-001",
+      "referenceType": "fee-notice",
+      "reviewStatus": "pending-official-verification",
+      "sourceLabel": "첨부 소개요금 고시의 문서 유형",
+      "officialIdentifier": "",
+      "effectiveOn": null,
+      "checkedOn": "2026-07-27",
+      "summaryPrinciples": [],
+      "notes": "공식 법령 원문의 고시 번호·시행일·개정 여부 확인 전 MOCK_FEE_RULES를 변경하지 않음"
+    },
+    {
+      "id": "MOCK-REFERENCE-ETHICS-001",
+      "referenceType": "ethics-code",
+      "reviewStatus": "unverified-reference",
+      "sourceLabel": "첨부 협회 행동강령의 문서 유형",
+      "officialIdentifier": "",
+      "effectiveOn": null,
+      "checkedOn": "2026-07-27",
+      "summaryPrinciples": [
+        "법령 준수",
+        "권익 보호",
+        "교육",
+        "공정성",
+        "자율시정"
+      ],
+      "notes": "전문을 복제하지 않고 운영 원칙만 요약"
+    }
+  ]
+}

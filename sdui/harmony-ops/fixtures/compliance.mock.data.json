@@ -1,0 +1,12 @@
+{
+  "schema": "harmony.mock.compliance-calendar.v1",
+  "mock": true,
+  "warning": "합성된 연습용 일정이며 실제 등록·보험·교육 기한이 아닙니다.",
+  "resourceId": "compliance.calendar",
+  "data": {
+    "overdueCount": 0,
+    "dueWithin30Days": 2,
+    "evidenceMissing": 1,
+    "nextDueDate": "2026-08-14"
+  }
+}

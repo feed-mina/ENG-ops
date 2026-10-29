@@ -1,0 +1,12 @@
+{
+  "mock": true,
+  "documentType": "내부 역할·권한표 Mock",
+  "warning": "실제 사용자 권한 승인서가 아니며 운영 증빙으로 사용할 수 없습니다.",
+  "roles": {
+    "owner": ["dashboard:read", "records:list", "records:read", "records:write", "records:export", "audit:read", "retention:destroy", "roles:manage", "system:backup"],
+    "staff": ["dashboard:read", "records:list", "records:read", "records:write"],
+    "system_admin": ["dashboard:read", "audit:read", "roles:manage", "system:backup"]
+  },
+  "reviewCycle": "quarterly-mock",
+  "approved": false
+}

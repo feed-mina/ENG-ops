@@ -1,0 +1,135 @@
+{
+  "mock": true,
+  "documentType": "하모니직업소개소 현장 실사 결과 Mock",
+  "warning": "실제 현장 방문이나 원본 확인 결과가 아니며 제출·점검·영업 증빙으로 사용할 수 없습니다.",
+  "auditId": "AUDIT-MOCK-2026-001",
+  "preparedOn": "2026-07-16",
+  "method": "사용자 제공 정보와 합성 자료를 사용한 비대면 Mock 실사",
+  "scope": [
+    "사업자·등록·보험·교육 상태",
+    "전화·운영시간·종사자·기기 상태",
+    "하루 근무·1개월 근무·회원제 일용근로자 흐름",
+    "식당과 소개소의 역할 경계",
+    "법정 장부와 현재 기록 항목의 차이"
+  ],
+  "confirmedForPrototype": [
+    {
+      "field": "상호",
+      "value": "하모니직업소개소",
+      "source": "사용자 제공 및 공개 인허가 참고정보",
+      "originalVerified": false
+    },
+    {
+      "field": "도로명주소",
+      "value": "서울특별시 동작구 남부순환로 2069 (사당동)",
+      "source": "사용자 제공 및 공개 인허가 참고정보",
+      "originalVerified": false
+    },
+    {
+      "field": "문의전화",
+      "value": "010-9124-2537",
+      "source": "사용자 제공·홈페이지 공개 승인",
+      "originalVerified": false
+    },
+    {
+      "field": "0003.png 공개",
+      "value": "승인",
+      "source": "사용자 명시 지시 2026-07-16",
+      "originalVerified": false,
+      "note": "이미지에 전화번호와 계좌정보가 포함되어 있다는 사실을 자산대장에 기록"
+    }
+  ],
+  "evidenceStatus": [
+    {
+      "item": "직업소개사업 등록증",
+      "mockFile": "mock-business-registration.json",
+      "status": "mock-ready",
+      "originalRequired": true
+    },
+    {
+      "item": "사업자등록증",
+      "mockFile": "mock-business-certificate.json",
+      "status": "mock-ready",
+      "originalRequired": true
+    },
+    {
+      "item": "보증보험 증권",
+      "mockFile": "mock-guarantee-insurance.json",
+      "status": "mock-ready",
+      "originalRequired": true
+    },
+    {
+      "item": "대표자·종사자 교육 수료증",
+      "mockFile": "mock-training-certificate.json",
+      "status": "mock-ready",
+      "originalRequired": true
+    },
+    {
+      "item": "실제 운영시간·휴무일",
+      "mockFile": null,
+      "status": "unknown",
+      "originalRequired": true
+    },
+    {
+      "item": "종사자·기기·수첩·서식 현황",
+      "mockFile": null,
+      "status": "assumption-only",
+      "originalRequired": true
+    }
+  ],
+  "roleBoundary": {
+    "restaurant": [
+      "근로계약 체결",
+      "현장 업무 지휘와 안전 안내",
+      "근로시간 확인",
+      "임금 계산과 직접 지급"
+    ],
+    "agency": [
+      "구인·구직 조건 접수",
+      "사업자·근로조건 확인",
+      "후보 연락과 양측 조건 재확인",
+      "소개·취업 결과와 소개요금 장부 기록"
+    ],
+    "blockedForAgency": [
+      "근로자를 직접 지휘",
+      "식당 대신 임금을 지급",
+      "확인되지 않은 조건으로 자동 배정"
+    ]
+  },
+  "ledgerGapReview": [
+    {
+      "ledger": "종사자명부",
+      "prototypeStatus": "not-implemented",
+      "nextAction": "실제 종사자 수와 필수항목 확인 후 Mock 추가"
+    },
+    {
+      "ledger": "구인접수대장",
+      "prototypeStatus": "implemented-with-mock",
+      "nextAction": "현재 수첩과 필드 대조"
+    },
+    {
+      "ledger": "구직접수·직업소개대장",
+      "prototypeStatus": "implemented-with-mock",
+      "nextAction": "현재 수첩과 필드 대조"
+    },
+    {
+      "ledger": "일용근로자 회원명부",
+      "prototypeStatus": "implemented-with-mock",
+      "nextAction": "실제 회원제 운영과 회비 약정 확인"
+    },
+    {
+      "ledger": "금전출납부",
+      "prototypeStatus": "implemented-with-mock",
+      "nextAction": "실제 수납·환불·영수증 흐름 확인"
+    }
+  ],
+  "unresolvedQuestions": [
+    "실제 운영시간과 정기 휴무일은 무엇인가?",
+    "대표자 외 종사자가 있는가? 최근 교육 수료일은 언제인가?",
+    "보증보험의 실제 가입금액·증권번호·만료일은 무엇인가?",
+    "하루 근무와 월 근무의 임금 지급일·지급방법은 식당별로 어떻게 확인하는가?",
+    "결근·조기퇴근·대체인력·사고·분쟁은 현재 어떻게 기록하는가?",
+    "현재 사용하는 수첩과 서식에서 법정 장부 필수항목이 빠져 있지 않은가?"
+  ],
+  "requiredAction": "실제 현장 방문 시 원본을 GitHub에 올리지 말고 확인 결과·확인일·확인자·가림 샘플만 기록"
+}

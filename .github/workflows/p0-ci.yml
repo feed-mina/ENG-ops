@@ -1,0 +1,29 @@
+name: ENG and upstream Mock CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, "codex/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check:p0
+      - run: npm run lint
+      - run: npm run check:worker
+      - run: npm run test:sdui
+      - run: npm run test:ops-web
+      - run: npm run test:seo
+      - run: npm test
+      - run: npm run check:eng

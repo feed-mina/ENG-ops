@@ -1,0 +1,43 @@
+{
+  "mock": true,
+  "warning": "합성·연습용 사업자등록증 OCR 검토 자료이며 실제 사업자나 제출 문서와 관계없습니다.",
+  "schemaVersion": "harmony.business-evidence-ocr-review.v1",
+  "documentType": "business-registration",
+  "source": "synthetic-ocr",
+  "reviewStatus": "pending-human-review",
+  "capturedOn": "2026-07-27",
+  "observedFieldTypes": [
+    "business-registration-number",
+    "business-name",
+    "representative-name",
+    "opening-date",
+    "detailed-address",
+    "business-type",
+    "business-item",
+    "issued-on",
+    "official-seal"
+  ],
+  "extracted": {
+    "caseId": "MOCK-BUSINESS-EVIDENCE-001",
+    "businessNameAlias": "합성 사업장 A (가명)",
+    "businessType": "합성 서비스업",
+    "businessItem": "합성 고용지원 서비스",
+    "openedOn": "2025-01-15",
+    "maskedRegistrationNumber": "***-**-*****",
+    "maskedAddress": "[상세주소 삭제]",
+    "reviewNotes": "원본 대조 후 필요한 최소 항목을 식당 접수표에 별도 입력하고 자동 검증하지 않음"
+  },
+  "detections": [
+    "business-registration-number",
+    "business-name",
+    "person-name",
+    "detailed-address"
+  ],
+  "policy": {
+    "rawTextPersisted": false,
+    "imagePersisted": false,
+    "directRestaurantCreation": false,
+    "automaticVerification": false,
+    "humanReviewRequired": true
+  }
+}

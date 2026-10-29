@@ -1,0 +1,130 @@
+{
+  "schema": "harmony.sdui.document.v1",
+  "documentId": "ops.compliance",
+  "revision": 1,
+  "pageId": "compliance",
+  "locale": "ko",
+  "surface": "web",
+  "minRendererVersion": "0.1.0",
+  "themeRef": "harmony.berry.v1",
+  "requiredCapabilities": [
+    "Page@1",
+    "Section@1",
+    "Grid@1",
+    "Card@1",
+    "Heading@1",
+    "Text@1",
+    "Stat@1",
+    "Notice@1"
+  ],
+  "root": {
+    "id": "compliance.root",
+    "type": "Page",
+    "props": {
+      "titleKey": "compliance.title",
+      "descriptionKey": "compliance.description"
+    },
+    "roles": ["owner", "staff"],
+    "style": {
+      "padding": "space.lg",
+      "gap": "space.lg",
+      "background": "color.background"
+    },
+    "children": [
+      {
+        "id": "compliance.heading",
+        "type": "Heading",
+        "props": { "messageKey": "compliance.title", "level": 1 }
+      },
+      {
+        "id": "compliance.lead",
+        "type": "Text",
+        "props": { "messageKey": "compliance.description", "tone": "muted" }
+      },
+      {
+        "id": "compliance.summary",
+        "type": "Section",
+        "props": { "titleKey": "compliance.summary.title" },
+        "children": [
+          {
+            "id": "compliance.summary.grid",
+            "type": "Grid",
+            "props": { "columns": 2, "gapToken": "space.md" },
+            "children": [
+              {
+                "id": "compliance.overdue.card",
+                "type": "Card",
+                "props": { "tone": "neutral" },
+                "children": [{
+                  "id": "compliance.overdue.stat",
+                  "type": "Stat",
+                  "props": { "labelKey": "compliance.overdue" },
+                  "dataBinding": {
+                    "resourceId": "compliance.calendar",
+                    "pointer": "/overdueCount",
+                    "formatter": "number"
+                  }
+                }]
+              },
+              {
+                "id": "compliance.due.card",
+                "type": "Card",
+                "props": { "tone": "neutral" },
+                "children": [{
+                  "id": "compliance.due.stat",
+                  "type": "Stat",
+                  "props": { "labelKey": "compliance.due-within-30-days" },
+                  "dataBinding": {
+                    "resourceId": "compliance.calendar",
+                    "pointer": "/dueWithin30Days",
+                    "formatter": "number"
+                  }
+                }]
+              },
+              {
+                "id": "compliance.evidence.card",
+                "type": "Card",
+                "props": { "tone": "neutral" },
+                "children": [{
+                  "id": "compliance.evidence.stat",
+                  "type": "Stat",
+                  "props": { "labelKey": "compliance.evidence-missing" },
+                  "dataBinding": {
+                    "resourceId": "compliance.calendar",
+                    "pointer": "/evidenceMissing",
+                    "formatter": "number"
+                  }
+                }]
+              },
+              {
+                "id": "compliance.next.card",
+                "type": "Card",
+                "props": { "tone": "neutral" },
+                "children": [{
+                  "id": "compliance.next.stat",
+                  "type": "Stat",
+                  "props": { "labelKey": "compliance.next-due-date" },
+                  "dataBinding": {
+                    "resourceId": "compliance.calendar",
+                    "pointer": "/nextDueDate",
+                    "formatter": "dateKr"
+                  }
+                }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "compliance.mock.notice",
+        "type": "Notice",
+        "props": {
+          "titleKey": "compliance.mock.title",
+          "messageKey": "compliance.mock.message",
+          "tone": "important"
+        },
+        "accessibility": { "role": "status", "live": "polite" }
+      }
+    ]
+  }
+}

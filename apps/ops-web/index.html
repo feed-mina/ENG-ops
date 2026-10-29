@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; media-src 'self' blob:; font-src 'none'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'">
+    <title>하모니 내부 업무 화면</title>
+    <link rel="stylesheet" href="./renderer.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#ops-web-root">본문 바로가기</a>
+    <header class="app-header">
+      <p class="brand">하모니 직업소개소</p>
+      <nav class="app-nav" aria-label="내부 업무 화면">
+        <a href="#dashboard">업무 현황</a>
+        <a href="#compliance">준법 일정</a>
+        <a href="#consultation">통화 업무 도우미</a>
+      </nav>
+      <a class="legacy-link" href="/admin#dashboard">기존 화면</a>
+    </header>
+    <div id="ops-web-root" class="app-root" tabindex="-1">
+      <p role="status">내부 화면을 준비하고 있습니다.</p>
+    </div>
+    <noscript>
+      <p class="no-script">JavaScript를 사용할 수 없습니다. <a href="/admin#dashboard">기존 화면으로 이동</a></p>
+    </noscript>
+  </body>
+</html>

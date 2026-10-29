@@ -1,0 +1,12 @@
+{
+  "mock": true,
+  "documentType": "국내유료직업소개사업 등록증 형식 검증용 Mock",
+  "warning": "실제 등록증이 아니며 제출·공개·영업 증빙으로 사용할 수 없습니다.",
+  "registrationNumber": "MOCK-DJ-2015-0001",
+  "businessName": "하모니직업소개소",
+  "representative": "모의 대표자",
+  "officeAddress": "서울특별시 동작구 남부순환로 2069 (사당동)",
+  "registeredOn": "2015-01-28",
+  "verifiedAgainstOriginal": false,
+  "requiredAction": "실제 원본과 동작구 확인 후 값 교체"
+}

@@ -1,0 +1,16 @@
+{
+  "mock": true,
+  "documentType": "현장 지도점검 대비 자체점검표 Mock",
+  "warning": "관할기관의 실제 점검서식이 아닙니다.",
+  "checkedOn": "2026-07-15",
+  "items": [
+    { "label": "등록증·사업자등록증 일치", "status": "original-required" },
+    { "label": "보증보험 가입·만료일 확인", "status": "mock-only" },
+    { "label": "대표자·종사자 교육 수료증", "status": "mock-only" },
+    { "label": "구인·구직·소개·금전 장부 2년 보관", "status": "prototype-ready" },
+    { "label": "소개요금 계약 후 청구 및 상한 검증", "status": "prototype-ready" },
+    { "label": "개인정보 최소수집·파기", "status": "policy-draft" }
+  ],
+  "authorityConfirmed": false,
+  "requiredAction": "동작구 최신 점검표와 대조"
+}

@@ -1,0 +1,22 @@
+{
+  "mock": true,
+  "documentType": "보존·파기대장 Mock",
+  "warning": "실제 개인정보 파기기록이 아니며 제출 증빙으로 사용할 수 없습니다.",
+  "records": [
+    {
+      "id": "MOCK-RETENTION-A",
+      "category": "general-operational",
+      "expiresAt": "2027-07-16T00:00:00Z",
+      "legalHold": false,
+      "status": "active"
+    },
+    {
+      "id": "MOCK-RETENTION-LEGAL-HOLD",
+      "category": "statutory-ledger-2y",
+      "expiresAt": "2026-01-01T00:00:00Z",
+      "legalHold": true,
+      "status": "active"
+    }
+  ],
+  "productionExecuted": false
+}

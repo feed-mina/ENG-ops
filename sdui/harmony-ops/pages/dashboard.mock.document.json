@@ -1,0 +1,126 @@
+{
+  "schema": "harmony.sdui.document.v1",
+  "documentId": "ops.dashboard",
+  "revision": 1,
+  "pageId": "dashboard",
+  "locale": "ko",
+  "surface": "web",
+  "minRendererVersion": "0.1.0",
+  "themeRef": "harmony.berry.v1",
+  "requiredCapabilities": [
+    "Page@1",
+    "Section@1",
+    "Grid@1",
+    "Card@1",
+    "Heading@1",
+    "Text@1",
+    "Stat@1",
+    "Notice@1"
+  ],
+  "root": {
+    "id": "dashboard.root",
+    "type": "Page",
+    "props": {
+      "titleKey": "dashboard.title",
+      "descriptionKey": "dashboard.description"
+    },
+    "roles": ["owner", "staff"],
+    "style": {
+      "padding": "space.lg",
+      "gap": "space.lg",
+      "background": "color.background"
+    },
+    "children": [
+      {
+        "id": "dashboard.heading",
+        "type": "Heading",
+        "props": {
+          "messageKey": "dashboard.title",
+          "level": 1
+        }
+      },
+      {
+        "id": "dashboard.lead",
+        "type": "Text",
+        "props": {
+          "messageKey": "dashboard.description",
+          "tone": "muted"
+        }
+      },
+      {
+        "id": "dashboard.summary",
+        "type": "Section",
+        "props": {
+          "titleKey": "dashboard.summary.title"
+        },
+        "children": [
+          {
+            "id": "dashboard.summary.grid",
+            "type": "Grid",
+            "props": {
+              "columns": 2,
+              "gapToken": "space.md"
+            },
+            "children": [
+              {
+                "id": "dashboard.pending.card",
+                "type": "Card",
+                "props": {
+                  "tone": "neutral"
+                },
+                "children": [
+                  {
+                    "id": "dashboard.pending.stat",
+                    "type": "Stat",
+                    "props": {
+                      "labelKey": "dashboard.pending-requests"
+                    },
+                    "dataBinding": {
+                      "resourceId": "dashboard.summary",
+                      "pointer": "/pendingRequests",
+                      "formatter": "number"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "dashboard.placements.card",
+                "type": "Card",
+                "props": {
+                  "tone": "neutral"
+                },
+                "children": [
+                  {
+                    "id": "dashboard.placements.stat",
+                    "type": "Stat",
+                    "props": {
+                      "labelKey": "dashboard.today-placements"
+                    },
+                    "dataBinding": {
+                      "resourceId": "dashboard.summary",
+                      "pointer": "/todayPlacements",
+                      "formatter": "number"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dashboard.mock.notice",
+        "type": "Notice",
+        "props": {
+          "titleKey": "dashboard.mock.title",
+          "messageKey": "dashboard.mock.message",
+          "tone": "important"
+        },
+        "accessibility": {
+          "role": "status",
+          "live": "polite"
+        }
+      }
+    ]
+  }
+}

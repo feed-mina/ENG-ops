@@ -1,0 +1,44 @@
+{
+  "name": "eng-ops",
+  "version": "0.2.0",
+  "private": true,
+  "description": "건설현장 자료 비교와 가상 전화상담 초안 · mom-asked-ops 기반",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev --local --config wrangler.jsonc",
+    "dev:public": "npm run build:public && node scripts/dev-public.mjs",
+    "dev:ops-web": "node scripts/build-ops-web.mjs --enabled && node scripts/dev-ops-web.mjs",
+    "build": "npm run build:eng",
+    "build:internal": "node scripts/build.mjs",
+    "build:public": "node scripts/build-public.mjs",
+    "build:ops-web": "node scripts/build-ops-web.mjs",
+    "build:hosting": "node scripts/build.mjs --preserve",
+    "build:site": "node scripts/build.mjs && node scripts/build-public.mjs && node scripts/build-ops-web.mjs --enabled && node scripts/build.mjs --preserve",
+    "test": "npm run build:legacy && npm run build:eng && node --test tests/*.test.mjs",
+    "test:sdui": "node scripts/validate-sdui.mjs && node --test tests/sdui*.test.mjs",
+    "test:ops-web": "npm run build:ops-web && node --test tests/ops-web.test.mjs",
+    "test:seo": "npm run build:public && node --test tests/seo.test.mjs",
+    "lint": "node scripts/check.mjs",
+    "check:worker": "wrangler deploy --dry-run --config apps/ops-app/wrangler.mock.jsonc --outdir .wrangler/worker-bundle",
+    "check:worker:staging": "wrangler deploy --dry-run --config apps/ops-app/wrangler.staging.jsonc --outdir .wrangler/worker-staging-bundle",
+    "check:site": "npm run build:site && node scripts/check-site-build.mjs && wrangler deploy --dry-run --config wrangler.site.jsonc --outdir .wrangler/site-bundle",
+    "check:p0": "node scripts/check-p0-readiness.mjs",
+    "dev:legacy": "node scripts/dev.mjs",
+    "build:legacy": "node scripts/build.mjs && node scripts/build-public.mjs && node scripts/build-ops-web.mjs && node scripts/build.mjs --preserve",
+    "build:eng": "node scripts/build-eng.mjs",
+    "check:eng": "npm run build:eng && node --test tests/construction.test.mjs && wrangler deploy --dry-run --config wrangler.jsonc --outdir .wrangler/eng-bundle",
+    "deploy": "wrangler deploy --config wrangler.jsonc",
+    "deploy:eng": "wrangler deploy --config wrangler.jsonc",
+    "legacy:deploy:site": "npm run build:site && node scripts/check-site-build.mjs && wrangler deploy --config wrangler.site.jsonc",
+    "legacy:deploy:worker:staging": "wrangler deploy --keep-vars --config apps/ops-app/wrangler.staging.jsonc",
+    "legacy:migrate:worker:staging": "wrangler d1 migrations apply harmony-ops-staging --remote --config apps/ops-app/wrangler.staging.jsonc"
+  },
+  "type": "module",
+  "devDependencies": {
+    "ajv": "^8.18.0",
+    "esbuild": "^0.28.1",
+    "wrangler": "^4.111.0"
+  }
+}

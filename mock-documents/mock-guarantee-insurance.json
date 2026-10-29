@@ -1,0 +1,12 @@
+{
+  "mock": true,
+  "documentType": "보증보험 증권 형식 검증용 Mock",
+  "warning": "실제 보험계약이 아니며 제출 증빙으로 사용할 수 없습니다.",
+  "policyNumber": "MOCK-POLICY-2026-0001",
+  "insuredBusiness": "하모니직업소개소",
+  "coverageAmountKrw": 10000000,
+  "effectiveOn": "2025-11-01",
+  "expiresOn": "2026-10-31",
+  "renewalEvidenceDueRule": "갱신 증빙 10일 이내 제출 — 관할기관 재확인 필요",
+  "verifiedAgainstOriginal": false
+}

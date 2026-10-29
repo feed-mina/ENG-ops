@@ -1,0 +1,10 @@
+{
+  "mock": true,
+  "documentType": "Turnstile 서버 검증 계약 Mock",
+  "warning": "실제 Turnstile 사이트키나 비밀키가 아니며 제출 증빙으로 사용할 수 없습니다.",
+  "intakeEnabled": false,
+  "requiredChecks": ["server-side siteverify", "hostname", "action", "single-use token", "idempotency key"],
+  "expectedActions": ["restaurant-intake", "worker-intake"],
+  "containsSecret": false,
+  "productionConfigured": false
+}

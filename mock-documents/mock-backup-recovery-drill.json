@@ -1,0 +1,12 @@
+{
+  "mock": true,
+  "documentType": "D1 백업·복구훈련 기록 Mock",
+  "warning": "실제 백업이나 복구 결과가 아니며 운영 증빙으로 사용할 수 없습니다.",
+  "targetRpoHours": 24,
+  "targetRtoHours": 4,
+  "sourceDatabase": "MOCK-D1-SOURCE",
+  "recoveryDatabase": "MOCK-D1-RECOVERY",
+  "checks": ["migration version", "ledger row count", "fee count and sum", "latest audit hash"],
+  "executed": false,
+  "result": "pending-real-cloudflare-setup"
+}

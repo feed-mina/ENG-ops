@@ -1,0 +1,12 @@
+{
+  "mock": true,
+  "documentType": "직업소개사업자 교육 수료증 형식 검증용 Mock",
+  "warning": "실제 교육 수료를 증명하지 않습니다.",
+  "recipient": "모의 대표자",
+  "courseName": "2026 직업소개사업자 교육 (Mock)",
+  "hours": 4,
+  "completedOn": "2026-09-20",
+  "issuer": "MOCK 교육기관",
+  "certificateNumber": "MOCK-EDU-2026-0001",
+  "verifiedAgainstOriginal": false
+}
